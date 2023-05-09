@@ -17,9 +17,10 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           children: const [
             //TODO: CardSwiper
-            CardSwiper()
+            CardSwiper(),
 
             //TODO: Listado horizontal de peliculas
+            MovieSlider(),
           ],
         ));
   }
