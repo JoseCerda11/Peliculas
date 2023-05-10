@@ -14,14 +14,18 @@ class HomeScreen extends StatelessWidget {
             IconButton(onPressed: () {}, icon: const Icon(Icons.search))
           ],
         ),
-        body: Column(
-          children: const [
-            //TODO: CardSwiper
-            CardSwiper(),
-
-            //TODO: Listado horizontal de peliculas
-            MovieSlider(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: const [
+              //TODO: CardSwiper
+              CardSwiper(),
+              SizedBox(
+                height: 20,
+              ),
+              //TODO: Listado horizontal de peliculas
+              MovieSlider(),
+            ],
+          ),
         ));
   }
 }
