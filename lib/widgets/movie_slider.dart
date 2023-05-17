@@ -35,8 +35,6 @@ class MovieSlider extends StatelessWidget {
 }
 
 class _MoviePoster extends StatelessWidget {
-  const _MoviePoster({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -50,11 +48,13 @@ class _MoviePoster extends StatelessWidget {
                 arguments: 'movie-instance'),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: const FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage('https://via.placeholder.com/300x400'),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/no-image.jpg'),
+                image: const AssetImage('assets/no-image.jpg'),
                 width: 130,
                 height: 190,
+                imageErrorBuilder: (context, error, stackTrace) =>
+                    const Text('No se pudo cargar la imagen'),
               ),
             ),
           ),

@@ -7,27 +7,49 @@ class CastingCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 100,
-      color: Colors.red,
-      margin: const EdgeInsets.only(bottom: 30),
+      height: 178,
+      margin: const EdgeInsets.only(bottom: 20),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const _CastCard();
+            return _CastCard();
           }),
     );
   }
 }
 
 class _CastCard extends StatelessWidget {
-  const _CastCard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10),
-        width: 110,
-        height: 100,
-        color: Colors.green);
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      width: 110,
+      height: 50,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: FadeInImage(
+              height: 130,
+              width: 100,
+              fit: BoxFit.cover,
+              placeholder: const AssetImage('assets/no-image.jpg'),
+              image: const AssetImage('assets/no-image.jpg'),
+              imageErrorBuilder: (context, error, stackTrace) =>
+                  const Text('No se pudo cargar la imagen'),
+            ),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Text(
+            'Nombre Autor ashdjkhasd',
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
   }
 }

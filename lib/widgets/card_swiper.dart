@@ -22,10 +22,12 @@ class CardSwiper extends StatelessWidget {
                 arguments: 'movie-instance'),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: const FadeInImage(
-                placeholder: AssetImage('assets/no-image.jpg'),
-                image: NetworkImage('https://via.placeholder.com/300x400'),
+              child: FadeInImage(
+                placeholder: const AssetImage('assets/no-image.jpg'),
+                image: const AssetImage('assets/no-image.jpg'),
                 fit: BoxFit.cover,
+                imageErrorBuilder: (context, error, stackTrace) =>
+                    const Text('ERROR AL CARGAR IMAGEN'),
               ),
             ),
           );
